@@ -1,0 +1,786 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/bicon.png">
+  <link rel="icon" href="/img/bicon.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Wangdada">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="傅里叶变换积分性质$$ Y(\omega) &#x3D; \mathcal{F}\left{ \int_{-\infty}^{t} x(\tau) d\tau \right} &#x3D; \frac{1}{j\omega} X(\omega) + \pi X(0) \delta(\omega) $$ 1. 积分性质概述傅里叶变换的积分性质是指，当信号在时域或频域上发生积分操作时，其傅里叶变换将产">
+<meta property="og:type" content="article">
+<meta property="og:title" content="傅里叶变换积分性质的数学推导">
+<meta property="og:url" content="https://www.doit.cloudns.be/2024/08/13/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E7%A7%AF%E5%88%86%E6%80%A7%E8%B4%A8%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="傅里叶变换积分性质$$ Y(\omega) &#x3D; \mathcal{F}\left{ \int_{-\infty}^{t} x(\tau) d\tau \right} &#x3D; \frac{1}{j\omega} X(\omega) + \pi X(0) \delta(\omega) $$ 1. 积分性质概述傅里叶变换的积分性质是指，当信号在时域或频域上发生积分操作时，其傅里叶变换将产">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-13T04:28:13.000Z">
+<meta property="article:modified_time" content="2024-08-13T04:16:23.471Z">
+<meta property="article:author" content="Wangdada">
+<meta property="article:tag" content="傅里叶变换">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>傅里叶变换积分性质的数学推导 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/-/css/latex.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"www.doit.cloudns.be","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>留痕</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="傅里叶变换积分性质的数学推导"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-08-13 12:28" pubdate>
+          2024年8月13日 中午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">傅里叶变换积分性质的数学推导</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2024年8月13日 中午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="傅里叶变换积分性质"><a href="#傅里叶变换积分性质" class="headerlink" title="傅里叶变换积分性质"></a>傅里叶变换积分性质</h2><p>$$ Y(\omega) &#x3D; \mathcal{F}\left{ \int_{-\infty}^{t} x(\tau) d\tau \right} &#x3D; \frac{1}{j\omega} X(\omega) + \pi X(0) \delta(\omega) $$</p>
+<h3 id="1-积分性质概述"><a href="#1-积分性质概述" class="headerlink" title="1. 积分性质概述"></a>1. 积分性质概述</h3><p>傅里叶变换的积分性质是指，当信号在时域或频域上发生积分操作时，其傅里叶变换将产生相应的变化。常见的积分性质包括：</p>
+<ul>
+<li><p><strong>时域积分</strong>：如果信号$  x(t) $ 的傅里叶变换是 $ X(\omega) $，则 $ x(t) $ 的不定积分 $$\int_{-\infty}^{t} x(\tau) d\tau $$的傅里叶变换与 $ X(\omega) $ 相关。</p>
+</li>
+<li><p><strong>频域积分</strong>：如果 $ X(\omega) $ 在频域上进行了积分操作，那么这相当于时域信号的某种微分操作。</p>
+</li>
+</ul>
+<h3 id="2-时域积分的傅里叶变换"><a href="#2-时域积分的傅里叶变换" class="headerlink" title="2. 时域积分的傅里叶变换"></a>2. 时域积分的傅里叶变换</h3><p>假设时域信号 $ x(t) $ 的傅里叶变换为 $ X(\omega) $，即：<br>$$ X(\omega) &#x3D; \mathcal{F}{x(t)} &#x3D; \int_{-\infty}^{\infty} x(t) e^{-j\omega t} dt $$</p>
+<p>若对 $ x(t) $ 进行不定积分，即考虑信号 $ y(t) &#x3D; \int_{-\infty}^{t} x(\tau) d\tau $，其傅里叶变换为：<br>$$ Y(\omega) &#x3D; \mathcal{F}\left{ \int_{-\infty}^{t} x(\tau) d\tau \right} &#x3D; \frac{1}{j\omega} X(\omega) + \pi X(0) \delta(\omega) $$</p>
+<h3 id="3-频域积分的傅里叶变换"><a href="#3-频域积分的傅里叶变换" class="headerlink" title="3. 频域积分的傅里叶变换"></a>3. 频域积分的傅里叶变换</h3><p>同理，如果我们对频域的 $ X(\omega) $ 进行积分，即：<br>$$ Z(\omega) &#x3D; \int_{-\infty}^{\omega} X(\xi) d\xi $$</p>
+<p>则这相当于时域信号的微分操作。</p>
+<h3 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h3><p>假设有一个时域信号 $ x(t) $，其傅里叶变换为 $ X(\omega) $。如果我们对 $ x(t) $ 进行不定积分，得到一个新的时域信号：<br>$$<br>y(t) &#x3D; \int_{-\infty}^{t} x(\tau) d\tau<br>$$<br>我们想要找到 $ y(t) $ 的傅里叶变换 $ Y(\omega) $。</p>
+<h3 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h3><ol>
+<li><p><strong>傅里叶变换的定义：</strong><br>$$<br>Y(\omega) &#x3D; \mathcal{F}{y(t)} &#x3D; \int_{-\infty}^{\infty} y(t) e^{-j\omega t} dt<br>$$</p>
+</li>
+<li><p><strong>代入 $ y(t) $ 的表达式：</strong><br>$$<br>Y(\omega) &#x3D; \int_{-\infty}^{\infty} \left(\int_{-\infty}^{t} x(\tau) d\tau\right) e^{-j\omega t} dt<br>$$</p>
+</li>
+<li><p><strong>交换积分次序：</strong><br>利用交换积分次序的性质，我们将两个积分调换顺序：<br>$$<br>Y(\omega) &#x3D; \int_{-\infty}^{\infty} x(\tau) \left( \int_{\tau}^{\infty} e^{-j\omega t} dt \right) d\tau<br>$$</p>
+</li>
+<li><p><strong>计算内积分：</strong><br>计算内层积分 $ \int_{\tau}^{\infty} e^{-j\omega t} dt $：<br>$$<br>\int_{\tau}^{\infty} e^{-j\omega t} dt &#x3D; \left[\frac{e^{-j\omega t}}{-j\omega}\right]<em>{\tau}^{\infty} &#x3D; \frac{e^{-j\omega \tau}}{j\omega}<br>$$<br>代入后得到：<br>$$<br>Y(\omega) &#x3D; \frac{1}{j\omega} \int</em>{-\infty}^{\infty} x(\tau) e^{-j\omega \tau} d\tau<br>$$</p>
+</li>
+<li><p><strong>得到主要结果：</strong><br>上式的积分部分就是 $ x(t) $ 的傅里叶变换 $ X(\omega) $，所以我们得到：<br>$$<br>Y(\omega) &#x3D; \frac{X(\omega)}{j\omega}<br>$$</p>
+</li>
+<li><p><strong>考虑 $\omega &#x3D; 0$ 的情形：</strong><br>当 $ \omega &#x3D; 0 $ 时，上述表达式中的 $ j\omega $ 分母为 0，会导致不确定的情况。为了解决这一问题，我们需要加上一个附加项，它就是 $ \pi X(0)\delta(\omega) $，该项确保 $ Y(\omega) $ 在 $ \omega &#x3D; 0 $ 的情况能够得到正确处理。</p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>最终的傅里叶变换结果为：<br>$$<br>Y(\omega) &#x3D; \frac{X(\omega)}{j\omega} + \pi X(0)\delta(\omega)<br>$$</p>
+<p>其中，第二项 $ \pi X(0)\delta(\omega) $ 是为了补偿在 $ \omega &#x3D; 0 $ 处的奇异性而引入的，它确保傅里叶变换的结果在频域中是完整且正确的。</p>
+<h2 id="补偿项引入的讨论"><a href="#补偿项引入的讨论" class="headerlink" title="补偿项引入的讨论"></a>补偿项引入的讨论</h2><p>为了深入理解 $\pi X(0)\delta(\omega)$ 项的引入原因，我们需要仔细分析傅里叶变换在处理时域积分时，如何确保在频域中能够保持一致性和正确性。</p>
+<h3 id="1-问题背景与奇异性分析"><a href="#1-问题背景与奇异性分析" class="headerlink" title="1. 问题背景与奇异性分析"></a>1. 问题背景与奇异性分析</h3><p>当我们对信号 $x(t)$ 进行不定积分时，其傅里叶变换结果包含了一个 $\frac{X(\omega)}{j\omega}$ 的项。这个项在 $\omega &#x3D; 0$ 处会出现不确定性，因为分母为零，使得傅里叶变换在这一点上无法定义。为了弥补这一点，傅里叶变换的结果中必须引入一个补偿项，这个补偿项就是 $\pi X(0)\delta(\omega)$。</p>
+<h3 id="2-理论推导与补偿项的必要性"><a href="#2-理论推导与补偿项的必要性" class="headerlink" title="2. 理论推导与补偿项的必要性"></a>2. 理论推导与补偿项的必要性</h3><p>傅里叶变换中的补偿项通常与狄拉克函数 $\delta(\omega)$ 相关。狄拉克函数 $\delta(\omega)$ 在频域中表示一个非常特殊的点（通常是$\omega &#x3D; 0$），它具有在频率为零时的脉冲特性。这意味着傅里叶变换在这个点上的值对整体信号有显著影响。</p>
+<p><strong>推导</strong>：</p>
+<ul>
+<li><p>首先我们注意到，傅里叶变换的结果 $\frac{X(\omega)}{j\omega}$ 在 $\omega &#x3D; 0$ 时是不确定的。然而，傅里叶变换的性质要求其结果必须是有限且有意义的。</p>
+</li>
+<li><p>当我们分析 $\frac{X(\omega)}{j\omega}$ 在 $\omega &#x3D; 0$ 的极限时，如果 $ X(\omega) $ 的极限值 $ X(0) $ 是有限的，我们会发现这种表达式在该点需要引入额外的项来弥补这一点的不确定性。</p>
+</li>
+<li><p>这就引出了 $\pi X(0)\delta(\omega)$ 这一项：它是一个在 $\omega &#x3D; 0$ 处的“补偿项”，用来确保傅里叶变换结果在零频点上仍然有效。</p>
+</li>
+</ul>
+<h3 id="3-补偿项的物理意义"><a href="#3-补偿项的物理意义" class="headerlink" title="3. 补偿项的物理意义"></a>3. 补偿项的物理意义</h3><p>这个补偿项 $ \pi X(0)\delta(\omega) $ 实际上反映了信号在频率 $\omega &#x3D; 0$ 时的贡献。傅里叶变换的结果不仅要涵盖所有非零频率成分，还必须正确地处理信号的直流成分（即零频成分）。因此，$\pi X(0)\delta(\omega)$ 项确保了傅里叶变换能够正确反映这一点。</p>
+<h3 id="4-数学上的正确性验证"><a href="#4-数学上的正确性验证" class="headerlink" title="4. 数学上的正确性验证"></a>4. 数学上的正确性验证</h3><p>从数学上，我们可以通过积分和分布理论来验证这个补偿项的必要性。具体来说，傅里叶变换的逆变换要求频域信号的每个分量都能正确反映回时域信号，而这在频域的每个点，尤其是零频点，都是必须严格满足的。</p>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>$\pi X(0)\delta(\omega)$ 的引入，是为了弥补在 $\omega &#x3D; 0$ 处因分母为零导致的奇异性，确保傅里叶变换在整个频域内的正确性和一致性。这个补偿项能够有效反映信号在零频率点的贡献，保证了傅里叶变换结果的完整性。</p>
+<h2 id="补偿项的意义"><a href="#补偿项的意义" class="headerlink" title="补偿项的意义"></a>补偿项的意义</h2><p>要理解为什么补偿项是 $\pi X(0)\delta(\omega)$ 而不是其他形式，我们需要从傅里叶变换的性质和狄拉克 $\delta$ 函数的特性入手。</p>
+<h3 id="1-狄拉克-delta-函数的特性"><a href="#1-狄拉克-delta-函数的特性" class="headerlink" title="1. 狄拉克 $\delta$ 函数的特性"></a>1. 狄拉克 $\delta$ 函数的特性</h3><p>狄拉克 $\delta$ 函数是一个在频域和时域中具有特殊意义的分布，其主要特性包括：</p>
+<ul>
+<li><p><strong>定义</strong>：狄拉克 $\delta$ 函数满足：<br>$$<br>\delta(\omega) &#x3D; 0, \quad \text{当} \ \omega \neq 0<br>$$<br>以及<br>$$<br>\int_{-\infty}^{\infty} \delta(\omega) , d\omega &#x3D; 1<br>$$</p>
+</li>
+<li><p><strong>单位冲激信号</strong>：$\delta(\omega)$ 在频域中表示一个单位冲激信号，它在频率为零时有无限值，而在其他所有频率上都为零。</p>
+</li>
+<li><p><strong>傅里叶变换</strong>：狄拉克 $\delta$ 函数的傅里叶变换具有特殊的对偶性质。例如，时域中的常数信号 $1$ 的傅里叶变换就是 $\delta(\omega)$。</p>
+</li>
+</ul>
+<h3 id="2-傅里叶变换的零频点问题"><a href="#2-傅里叶变换的零频点问题" class="headerlink" title="2. 傅里叶变换的零频点问题"></a>2. 傅里叶变换的零频点问题</h3><p>在傅里叶变换中，当我们面对一个形式为 $\frac{X(\omega)}{j\omega}$ 的表达式时，$\omega &#x3D; 0$ 处会导致分母为零的奇异性。为了确保傅里叶变换在此处是有意义的，必须引入一个额外的项来弥补这种不确定性。</p>
+<h3 id="3-补偿项的推导"><a href="#3-补偿项的推导" class="headerlink" title="3. 补偿项的推导"></a>3. 补偿项的推导</h3><p>为了推导出补偿项的形式，我们需要考虑：</p>
+<ol>
+<li><p><strong>$X(\omega)$ 在 $\omega &#x3D; 0$ 处的行为</strong>：假设 $X(\omega)$ 在 $\omega &#x3D; 0$ 处是连续的，并且可以被写作 $X(0)$。</p>
+</li>
+<li><p><strong>对冲掉分母的影响</strong>：当 $\omega &#x3D; 0$ 时，表达式 $\frac{X(\omega)}{j\omega}$ 中的 $ \frac{1}{j\omega} $ 导致了奇异性。为了解决这个问题，我们必须通过引入 $\delta(\omega)$ 这样一个在 $\omega &#x3D; 0$ 处具有无限值的函数来消除该奇异性。</p>
+</li>
+<li><p><strong>确定常数项</strong>：考虑到傅里叶变换的对偶性质以及保持解析的需求，$\pi X(0)$ 是唯一合适的常数项，这确保了在傅里叶变换的逆变换过程中能够正确地恢复原始信号。</p>
+</li>
+</ol>
+<h3 id="4-为什么是-pi-X-0-delta-omega-？"><a href="#4-为什么是-pi-X-0-delta-omega-？" class="headerlink" title="4. 为什么是 $\pi X(0)\delta(\omega)$？"></a>4. 为什么是 $\pi X(0)\delta(\omega)$？</h3><ul>
+<li><p><strong>$\pi$ 系数的来源</strong>：这个 $\pi$ 系数来自于傅里叶变换和逆变换中的正交条件和积分的对称性。在标准傅里叶变换公式中，这个 $\pi$ 确保了结果在频域和时域间的转换中保持一致性。</p>
+</li>
+<li><p><strong>$X(0)$ 项的来源</strong>：$X(0)$ 代表信号在零频率（即直流成分）上的幅值。由于傅里叶变换在零频率上无法直接通过 $\frac{X(\omega)}{j\omega}$ 表示，所以我们通过引入 $\pi X(0)\delta(\omega)$ 来精确描述这个成分。</p>
+</li>
+<li><p><strong>$\delta(\omega)$ 函数的来源</strong>：$\delta(\omega)$ 的引入是为了在频域中精确定位 $\omega &#x3D; 0$ 处的贡献。这种形式使得傅里叶变换能够完整地描述信号的频谱特性，尤其是在处理非周期信号的直流成分时。</p>
+</li>
+</ul>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><p>补偿项的形式 $\pi X(0)\delta(\omega)$ 是傅里叶变换理论中唯一合理且必要的选择。这个形式既确保了解析上的一致性，又在频域上精确描述了信号在零频率处的贡献。它源于傅里叶变换中的数学结构和狄拉克 $\delta$ 函数的特性，而不是任意选择的结果。</p>
+<h2 id="补偿项系数的推导"><a href="#补偿项系数的推导" class="headerlink" title="补偿项系数的推导"></a>补偿项系数的推导</h2><h3 id="1-傅里叶变换的正交条件"><a href="#1-傅里叶变换的正交条件" class="headerlink" title="1. 傅里叶变换的正交条件"></a>1. 傅里叶变换的正交条件</h3><p>傅里叶变换的正交条件源自傅里叶变换的定义以及函数的正交性。傅里叶变换和逆傅里叶变换通常用于分析和合成信号，在这些操作中，它们会遵循一定的对称性和正交性。</p>
+<p><strong>正交性</strong>：在傅里叶变换中，不同频率的指数函数（如 $ e^{j\omega t} $）是正交的，这意味着在一个周期内，不同频率的这些函数的积分为零，除非它们是相同的频率。这正是为什么傅里叶变换能够将信号分解为不同频率成分的原因。</p>
+<h3 id="2-从正交条件得出公式的详细推导"><a href="#2-从正交条件得出公式的详细推导" class="headerlink" title="2. 从正交条件得出公式的详细推导"></a>2. 从正交条件得出公式的详细推导</h3><p>考虑到傅里叶变换和逆傅里叶变换的正交条件，我们可以从中得出一些基本关系，这也是为何需要引入补偿项 $ \pi X(0)\delta(\omega) $ 的原因。</p>
+<p>首先，假设 $ g(t) $ 是 $ x(t) $ 的积分，即：</p>
+<p>$$<br>g(t) &#x3D; \int_{-\infty}^{t} x(\tau) d\tau<br>$$</p>
+<p>这个积分在傅里叶变换域中的对应关系是：</p>
+<p>$$<br>G(\omega) &#x3D; \frac{X(\omega)}{j\omega} + \pi X(0)\delta(\omega)<br>$$</p>
+<p>这里的补偿项 $ \pi X(0)\delta(\omega) $ 是为了处理 $ \omega &#x3D; 0 $ 时的奇异性。为了说明补偿项的必要性，来看以下推导。</p>
+<p><strong>傅里叶变换的逆变换</strong>（从频域回到时域）：</p>
+<p>$$<br>x(t) &#x3D; \frac{1}{2\pi} \int_{-\infty}^{\infty} X(\omega) e^{j\omega t} d\omega<br>$$</p>
+<p>如果考虑补偿项 $\pi X(0)\delta(\omega)$，则其贡献仅在 $\omega &#x3D; 0$ 处。对于这种情况：</p>
+<p>$$<br>\int_{-\infty}^{\infty} \delta(\omega) d\omega &#x3D; 1<br>$$</p>
+<p>因此，考虑到补偿项的贡献，我们有：</p>
+<p>$$<br>\frac{1}{2\pi} \int_{-\infty}^{\infty} \pi X(0)\delta(\omega) d\omega &#x3D; \frac{1}{2\pi} \cdot \pi X(0) &#x3D; \frac{X(0)}{2}<br>$$</p>
+<p>这表明，$\pi$ 系数确保了傅里叶变换的逆变换能够准确地恢复信号在 $\omega &#x3D; 0$ 处的频率成分。</p>
+<h3 id="3-正交条件的作用"><a href="#3-正交条件的作用" class="headerlink" title="3. 正交条件的作用"></a>3. 正交条件的作用</h3><p>傅里叶变换的正交条件保证了不同频率成分彼此之间的独立性。这意味着任何两个不同频率的指数函数在复数空间内的内积为零：</p>
+<p>$$<br>\int_{-\infty}^{\infty} e^{j\omega_1 t} e^{-j\omega_2 t} dt &#x3D; 0 \quad \text{当} \quad \omega_1 \neq \omega_2<br>$$</p>
+<p>在频域上，这种正交性表现为不同频率成分之间没有重叠，每个频率成分的权重由傅里叶变换系数 $ X(\omega) $ 给出。因此，为了保持这种正交性，并确保逆傅里叶变换的正确性，补偿项的引入成为必要。</p>
+<h3 id="4-公式的推导"><a href="#4-公式的推导" class="headerlink" title="4. 公式的推导"></a>4. 公式的推导</h3><p>公式 $ \frac{1}{2\pi} \int_{-\infty}^{\infty} \pi X(0)\delta(\omega) d\omega &#x3D; \frac{X(0)}{2} $ 来自于对 $\delta(\omega)$ 的性质的应用。狄拉克 $\delta$ 函数的一个重要性质是：</p>
+<p>$$<br>\int_{-\infty}^{\infty} \delta(\omega) d\omega &#x3D; 1<br>$$</p>
+<p>因此：</p>
+<p>$$<br>\frac{1}{2\pi} \int_{-\infty}^{\infty} \pi X(0)\delta(\omega) d\omega &#x3D; \frac{1}{2\pi} \cdot \pi X(0) &#x3D; \frac{X(0)}{2}<br>$$</p>
+<p>这一结果表明，补偿项的引入不仅能修复 $\omega &#x3D; 0$ 处的奇异性，还能确保傅里叶变换的逆变换过程在数学上是严格正确的。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>正交条件确保了傅里叶变换的正确性和逆变换的精确性，而补偿项 $\pi X(0)\delta(\omega)$ 中的 $\pi$ 系数则源自于对傅里叶变换的对称性及$\delta(\omega)$函数的积分性质的严格要求。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/" class="print-no-link">#傅里叶变换</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>傅里叶变换积分性质的数学推导</div>
+      <div>https://www.doit.cloudns.be/2024/08/13/傅里叶变换的积分性质数学推导/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wangdada</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年8月13日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/08/13/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E5%8F%8A%E5%AF%B9%E5%81%B6%E6%8E%A8%E5%AF%BC/" title="卷积定理及其对偶的数学推导">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">卷积定理及其对偶的数学推导</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/08/13/%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%8D%E4%B8%BA0%E7%9A%84%E6%84%8F%E4%B9%89/" title="行列式">
+                        <span class="hidden-mobile">行列式</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

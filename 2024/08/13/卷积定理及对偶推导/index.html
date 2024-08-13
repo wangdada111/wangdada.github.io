@@ -21,21 +21,22 @@
   <meta name="author" content="Wangdada">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Markdown 渐变背景示例              body {             background: linear-gradient(to right, #ff9966, #ff5e62);             color: white;             font-family: Arial, sans-serif;">
+    <meta name="description" content="引言卷积定理与对偶定理是傅里叶变换中非常重要的两个定理。它们帮助我们理解时域和频域之间的关系，在信号处理和其他应用中广泛使用。利用这两个定理可以在处理信号和系统问题时更灵活地在时域和频域之间切换。为下面是这两个定理的详细数学推导，并解释它们的核心概念和联系。 一、卷积定理卷积定理表明两个信号在时域中的卷积等价于它们在频域中的乘积。即：$$ \mathcal{F}{f(t) * g(t)} &amp;#x3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://www.doit.cloudns.be/2024/08/03/%E6%B8%90%E5%8F%98/index.html">
+<meta property="og:title" content="卷积定理及其对偶的数学推导">
+<meta property="og:url" content="https://www.doit.cloudns.be/2024/08/13/%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E5%8F%8A%E5%AF%B9%E5%81%B6%E6%8E%A8%E5%AF%BC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Markdown 渐变背景示例              body {             background: linear-gradient(to right, #ff9966, #ff5e62);             color: white;             font-family: Arial, sans-serif;">
+<meta property="og:description" content="引言卷积定理与对偶定理是傅里叶变换中非常重要的两个定理。它们帮助我们理解时域和频域之间的关系，在信号处理和其他应用中广泛使用。利用这两个定理可以在处理信号和系统问题时更灵活地在时域和频域之间切换。为下面是这两个定理的详细数学推导，并解释它们的核心概念和联系。 一、卷积定理卷积定理表明两个信号在时域中的卷积等价于它们在频域中的乘积。即：$$ \mathcal{F}{f(t) * g(t)} &amp;#x3">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-02T16:46:07.124Z">
-<meta property="article:modified_time" content="2024-08-02T16:47:32.260Z">
+<meta property="article:published_time" content="2024-08-13T04:28:13.000Z">
+<meta property="article:modified_time" content="2024-08-13T04:17:00.857Z">
 <meta property="article:author" content="Wangdada">
+<meta property="article:tag" content="傅里叶变换">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hexo</title>
+  <title>卷积定理及其对偶的数学推导 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,7 +206,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="卷积定理及其对偶的数学推导"></span>
           
         </div>
 
@@ -216,8 +217,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-03 00:46" pubdate>
-          2024年8月3日 凌晨
+        <time datetime="2024-08-13 12:28" pubdate>
+          2024年8月13日 中午
         </time>
       </span>
     
@@ -228,7 +229,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          64 字
+          960 字
         
       </span>
     
@@ -239,7 +240,7 @@
         
         
         
-          1 分钟
+          9 分钟
         
       </span>
     
@@ -276,12 +277,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header"></h1>
+            <h1 id="seo-header">卷积定理及其对偶的数学推导</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2024年8月3日 凌晨
+                    本文最后更新于 2024年8月13日 中午
                   
                 
               </p>
@@ -289,31 +290,47 @@
             
               <div class="markdown-body">
                 
-                <!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown 渐变背景示例</title>
-    <style>
-        body {
-            background: linear-gradient(to right, #ff9966, #ff5e62);
-            color: white;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-    </style>
-</head>
-<body>
-<h1>这是一个带有渐变背景的 Markdown 文档</h1>
-<p>这个例子展示了如何在 Markdown 中使用 HTML 和 CSS 来创建渐变背景。</p>
-<ul>
-    <li>项目 1</li>
-    <li>项目 2</li>
-    <li>项目 3</li>
-</ul>
-</body>
-</html>
+                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>卷积定理与对偶定理是傅里叶变换中非常重要的两个定理。它们帮助我们理解时域和频域之间的关系，在信号处理和其他应用中广泛使用。利用这两个定理可以在处理信号和系统问题时更灵活地在时域和频域之间切换。为下面是这两个定理的详细数学推导，并解释它们的核心概念和联系。</p>
+<h3 id="一、卷积定理"><a href="#一、卷积定理" class="headerlink" title="一、卷积定理"></a>一、卷积定理</h3><p><strong>卷积定理</strong>表明两个信号在时域中的卷积等价于它们在频域中的乘积。即：<br>$$ \mathcal{F}{f(t) * g(t)} &#x3D; \mathcal{F}{f(t)} \cdot \mathcal{F}{g(t)} $$</p>
+<p>这里，$ \mathcal{F}  $表示傅里叶变换，$ * $ 表示卷积操作。</p>
+<h4 id="1-卷积的定义"><a href="#1-卷积的定义" class="headerlink" title="1. 卷积的定义"></a>1. 卷积的定义</h4><p>两个函数$  f(t) $ 和$ g(t) $ 的卷积定义为：<br>$$ (f * g)(t) &#x3D; \int_{-\infty}^{\infty} f(\tau) g(t-\tau) d\tau $$</p>
+<h4 id="2-卷积定理的推导"><a href="#2-卷积定理的推导" class="headerlink" title="2. 卷积定理的推导"></a>2. 卷积定理的推导</h4><ol>
+<li><p><strong>傅里叶变换的定义</strong>：<br>$$ \mathcal{F}{f(t)} &#x3D; F(\omega) &#x3D; \int_{-\infty}^{\infty} f(t) e^{-j\omega t} dt $$</p>
+</li>
+<li><p><strong>卷积的傅里叶变换</strong>：<br>对卷积 ( f(t) * g(t) ) 进行傅里叶变换：<br>$$ \mathcal{F}{f(t) * g(t)} &#x3D; \int_{-\infty}^{\infty} \left( \int_{-\infty}^{\infty} f(\tau) g(t-\tau) d\tau \right) e^{-j\omega t} dt $$</p>
+</li>
+<li><p><strong>交换积分顺序</strong>：<br>将两个积分的顺序交换：<br>$$ \mathcal{F}{f(t) * g(t)} &#x3D; \int_{-\infty}^{\infty} f(\tau) \left( \int_{-\infty}^{\infty} g(t-\tau) e^{-j\omega t} dt \right) d\tau $$</p>
+</li>
+<li><p><strong>代换变量</strong>：<br>在内部积分中，令 ( u &#x3D; t - \tau )，则 ( du &#x3D; dt )。因此内部积分可以变为：<br>$$ \int_{-\infty}^{\infty} g(u) e^{-j\omega (u+\tau)} du &#x3D; e^{-j\omega \tau} \int_{-\infty}^{\infty} g(u) e^{-j\omega u} du $$</p>
+<p>所以：<br>$$ \mathcal{F}{f(t) * g(t)} &#x3D; \int_{-\infty}^{\infty} f(\tau) e^{-j\omega \tau} d\tau \cdot \int_{-\infty}^{\infty} g(u) e^{-j\omega u} du $$<br>$$ \mathcal{F}{f(t) * g(t)} &#x3D; \mathcal{F}{f(t)} \cdot \mathcal{F}{g(t)} $$</p>
+</li>
+</ol>
+<p>这证明了卷积定理。</p>
+<h3 id="二、对偶定理"><a href="#二、对偶定理" class="headerlink" title="二、对偶定理"></a>二、对偶定理</h3><p><strong>对偶定理</strong>则是卷积定理的频域对偶形式。它表明两个信号在频域中的卷积等价于它们在时域中的乘积。即：<br>$$ \mathcal{F}{f(t) \cdot g(t)} &#x3D; \frac{1}{2\pi} \mathcal{F}{f(t)} * \mathcal{F}{g(t)} $$</p>
+<h4 id="1-乘积的傅里叶变换"><a href="#1-乘积的傅里叶变换" class="headerlink" title="1. 乘积的傅里叶变换"></a>1. 乘积的傅里叶变换</h4><p>考虑两个函数 $ f(t)  和  g(t) $ 的乘积：<br>$$ h(t) &#x3D; f(t) \cdot g(t) $$</p>
+<p>我们要求 $ h(t) $ 的傅里叶变换。</p>
+<h4 id="2-乘积的傅里叶变换的推导"><a href="#2-乘积的傅里叶变换的推导" class="headerlink" title="2. 乘积的傅里叶变换的推导"></a>2. 乘积的傅里叶变换的推导</h4><ol>
+<li><p><strong>傅里叶变换的定义</strong>：<br>$$ H(\omega) &#x3D; \mathcal{F}{h(t)} &#x3D; \int_{-\infty}^{\infty} h(t) e^{-j\omega t} dt $$</p>
+</li>
+<li><p><strong>代入 ( h(t) &#x3D; f(t) \cdot g(t) )</strong>：<br>$$ H(\omega) &#x3D; \int_{-\infty}^{\infty} f(t) g(t) e^{-j\omega t} dt $$</p>
+</li>
+<li><p><strong>利用傅里叶逆变换</strong>：<br>可以将 ( g(t) ) 表示为其傅里叶逆变换：<br>$$ g(t) &#x3D; \frac{1}{2\pi} \int_{-\infty}^{\infty} G(\omega’) e^{j\omega’ t} d\omega’ $$</p>
+<p>代入上式：<br>$$ H(\omega) &#x3D; \frac{1}{2\pi} \int_{-\infty}^{\infty} f(t) \left( \int_{-\infty}^{\infty} G(\omega’) e^{j\omega’ t} d\omega’ \right) e^{-j\omega t} dt $$</p>
+</li>
+<li><p><strong>交换积分顺序</strong>：<br>交换积分顺序后，得到：<br>$$ H(\omega) &#x3D; \frac{1}{2\pi} \int_{-\infty}^{\infty} G(\omega’) \left( \int_{-\infty}^{\infty} f(t) e^{j(\omega’ - \omega)t} dt \right) d\omega’ $$</p>
+</li>
+<li><p><strong>内部积分为傅里叶变换</strong>：<br>内部积分实际上是 ( f(t) ) 的傅里叶变换的形式：<br>$$ \int_{-\infty}^{\infty} f(t) e^{-j(\omega-\omega’)t} dt &#x3D; F(\omega - \omega’) $$</p>
+<p>因此：<br>$$ H(\omega) &#x3D; \frac{1}{2\pi} \int_{-\infty}^{\infty} G(\omega’) F(\omega - \omega’) d\omega’ $$</p>
+<p>这正是 $F(\omega)  和 G(\omega) $ 的卷积形式。</p>
+</li>
+</ol>
+<p>即：<br>$$ \mathcal{F}{f(t) \cdot g(t)} &#x3D; \frac{1}{2\pi} \mathcal{F}{f(t)} * \mathcal{F}{g(t)} $$</p>
+<h3 id="三、卷积定理与对偶定理的联系"><a href="#三、卷积定理与对偶定理的联系" class="headerlink" title="三、卷积定理与对偶定理的联系"></a>三、卷积定理与对偶定理的联系</h3><p>卷积定理和对偶定理在形式上是对称的，一个在时域中是卷积，另一个在频域中是卷积。这种对称性在傅里叶变换的很多性质中都可以观察到，说明了时域和频域之间的深刻联系。</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li><strong>卷积定理</strong>：时域的卷积对应频域的乘积。</li>
+<li><strong>对偶定理</strong>：时域的乘积对应频域的卷积。</li>
+</ol>
+
                 
               </div>
             
@@ -321,6 +338,13 @@
             <div>
               <div class="post-metas my-3">
   
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/" class="print-no-link">#傅里叶变换</a>
+      
+    </div>
   
 </div>
 
@@ -330,8 +354,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
-      <div>https://www.doit.cloudns.be/2024/08/03/渐变/</div>
+      <div>卷积定理及其对偶的数学推导</div>
+      <div>https://www.doit.cloudns.be/2024/08/13/卷积定理及对偶推导/</div>
     </div>
     <div class="license-meta">
       
@@ -343,7 +367,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年8月3日</div>
+          <div>2024年8月13日</div>
         </div>
       
       
@@ -375,9 +399,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/08/13/%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%8D%E4%B8%BA0%E7%9A%84%E6%84%8F%E4%B9%89/" title="行列式">
+                      <a href="/2024/08/13/%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9/" title="矩阵的秩">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">行列式</span>
+                        <span class="hidden-mobile">矩阵的秩</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -385,8 +409,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/29/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2024/08/13/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E7%A7%AF%E5%88%86%E6%80%A7%E8%B4%A8%E6%95%B0%E5%AD%A6%E6%8E%A8%E5%AF%BC/" title="傅里叶变换积分性质的数学推导">
+                        <span class="hidden-mobile">傅里叶变换积分性质的数学推导</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
